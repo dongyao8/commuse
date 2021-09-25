@@ -2,7 +2,7 @@
 
 require_once('../../vendor/autoload.php');
 
-use dongyao8\commuse\crypto\Aes;
+use Dongyao8\Commuse\crypto\Aes;
 
 $str = '这个工具很好用';
 $aes = new Aes('12345678');

@@ -1,20 +1,20 @@
 {
     "name": "dongyao8/commuse",
-    "description": "开发常用类库组件",
+    "description": "开发常用组件类库",
     "homepage": "http://www.dongyao.ren",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dongyao8\\Commuse\\": "src/"
+        }
+    },
     "authors": [
         {
-            "name": "clark",
+            "name": "MACBOOK",
             "email": "243512842@qq.com"
         }
     ],
     "require": {
         "php": ">=7.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "dongyao8\\commuse\\": "src/"
-        }
     }
 }

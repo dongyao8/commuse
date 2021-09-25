@@ -1,6 +1,6 @@
 <?php
 
-namespace dongyao8\commuse\validate;
+namespace Dongyao8\Commuse\validate;
 
 
 class Verify

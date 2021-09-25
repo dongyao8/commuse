@@ -1,7 +1,7 @@
 <?php
 require_once('../../vendor/autoload.php');
 
-use dongyao8\commuse\validate\Verify;
+use Dongyao8\Commuse\validate\Verify;
 
 $name = 'test123';
 $verify = new Verify;
