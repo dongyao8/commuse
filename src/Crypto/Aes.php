@@ -1,6 +1,6 @@
 <?php
  
- namespace Dongyao8\Commuse\crypto;
+ namespace Dongyao8\Commuse\Crypto;
  
 class Aes
 {

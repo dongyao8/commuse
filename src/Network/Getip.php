@@ -1,6 +1,6 @@
 <?php
 
-namespace Dongyao8\Commuse\network;
+namespace Dongyao8\Commuse\Network;
 
 
 class Getip
