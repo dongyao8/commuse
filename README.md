@@ -2,9 +2,13 @@
  该项目用于收录整理日常开发所需的常用功能类库，目前处于初级阶段，欢迎各位朋友提供代码，一起维护，让开发变得更简单。
 ***
 ### 使用方法[推荐]
-
+稳定版本：
 ``` 
     composer require dongyao8/commuse
+```
+开发版本：
+``` 
+    composer require dongyao8/commuse dev-main
 ```
 
 ### 升级办法
@@ -12,6 +16,15 @@
 ``` 
     composer update dongyao8/commuse
 ```
+***
+### 相关栏目
+
+- 字符类
+- 加密解密类
+- 网络通信类
+- 验证类
+- 持续更新中……
+
 ***
 
 ### 使用说明
