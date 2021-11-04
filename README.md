@@ -33,16 +33,18 @@
 | ------- | ------- |-------  |
 | \Character | Moneyts.php | 金额数额转换人民币大写值|
 | \Character | Pinyin.php| 汉字转拼音|
+| \Character | Timeformat.php| 时间格式语义化|
 | \Crypto |  Aes.php     | Aes加密解密 |
 | \Crypto |  Asymmetric.php|  非对称相关计算方法 |
 | \Crypto |Base64.php | 区别与base64_encode，此方法为安全的base64加密 |
+| \File |  Filehandle.php     | 文件处理相关方法 |
 | \Network | Getip.php| 获取客户端IP地址 |
 | \Validate | Verify.php| 常用的一些字段验证 |
 | 持续更新中 | 持续更新中| 持续更新中…… |
 
 
 ### 使用示例
-
+- 金额处理：
 ```php
     <?php
     require_once('../../vendor/autoload.php');
@@ -53,4 +55,21 @@
     echo $ip->rmb('156.33');
 ```
 > 得到输出结果：壹佰伍拾陆元叁角叁分
+
+- 金额处理：
+```php
+    <?php
+    require_once('../../vendor/autoload.php');
+    use Dongyao8\Commuse\Crypto\Aes;
+    $str = '这个工具很好用';
+    $aes = new Aes('12345678');
+    $encrypted = $aes->encrypt($str);
+    echo '要加密的字符串：'.$str.'<br>加密后的字符串：', $encrypted, '<hr>';
+    $decrypted = $aes->decrypt($encrypted);
+    echo '要解密的字符串：', $encrypted, '<br>解密后的字符串：', $decrypted;
+```
+> 要加密的字符串：这个工具很好用
+> 加密后的字符串：85d61MYsItXd81sPW5e3fxY8oONzlOHyOJBOy8P57CY=
+> 要解密的字符串：85d61MYsItXd81sPW5e3fxY8oONzlOHyOJBOy8P57CY=
+> 解密后的字符串：这个工具很好用
 ***
