@@ -21,6 +21,7 @@
 
 - 字符类
 - 加密解密类
+- 文件处理类
 - 网络通信类
 - 验证类
 - 持续更新中……
@@ -61,15 +62,18 @@
     <?php
     require_once('../../vendor/autoload.php');
     use Dongyao8\Commuse\Crypto\Aes;
+      
     $str = '这个工具很好用';
     $aes = new Aes('12345678');
+    // 加密
     $encrypted = $aes->encrypt($str);
     echo '要加密的字符串：'.$str.'<br>加密后的字符串：', $encrypted, '<hr>';
+    // 解密
     $decrypted = $aes->decrypt($encrypted);
     echo '要解密的字符串：', $encrypted, '<br>解密后的字符串：', $decrypted;
 ```
-> 要加密的字符串：这个工具很好用
-> 加密后的字符串：85d61MYsItXd81sPW5e3fxY8oONzlOHyOJBOy8P57CY=
-> 要解密的字符串：85d61MYsItXd81sPW5e3fxY8oONzlOHyOJBOy8P57CY=
-> 解密后的字符串：这个工具很好用
+> 要加密的字符串：这个工具很好用  
+> 加密后的字符串：85d61MYsItXd81sPW5e3fxY8oONzlOHyOJBOy8P57CY=  
+> 要解密的字符串：85d61MYsItXd81sPW5e3fxY8oONzlOHyOJBOy8P57CY=  
+> 解密后的字符串：这个工具很好用  
 ***
