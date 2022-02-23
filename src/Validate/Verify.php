@@ -216,4 +216,36 @@ class Verify
         }
     }
 
+    /**
+     * Email
+     * @param $str
+     * @return false|int
+     */
+    public static function check_email($str)
+    {
+        return preg_match("/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/", $str);
+    }
+
+    /**
+     * 检测访问是否来自微信端
+     * @return bool
+     */
+    public static function is_wechat()
+    {
+        return strpos($_SERVER ['HTTP_USER_AGENT'], 'MicroMessenger') !== false ? true : false;
+    }
+
+    /**
+     * 固话
+     * @param $num
+     * @return bool
+     */
+    public static function check_telephone($num)
+    {
+        if (preg_match('/^([0-9]{3,4}-)?[0-9]{7,8}$/', $num)) {
+            return true;
+        }
+        return false;
+    }
+
 }
