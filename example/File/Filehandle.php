@@ -16,6 +16,7 @@ $file = new Filehandle;
  * @param integer $deepth 扫描深度
  */
 
+
 $path = '../';
 
 var_dump($file->fastScanDir($path, $level = 0, $showfile = true, $skips = array(), $deepth = 0));
