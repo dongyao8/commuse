@@ -31,23 +31,26 @@
 
 ### 使用说明
 
-|   目录   | 文件名            | 描述                               |
-| ------- |----------------|----------------------------------|
-| \Character | Moneyts.php    | 金额数额转换人民币大写值                     |
-| \Character | Pinyin.php     | 汉字转拼音                            |
-| \Character | Timeformat.php | 时间格式语义化                          |
-| \Crypto | Aes.php        | Aes加密解密                          |
-| \Crypto | Asymmetric.php | 非对称相关计算方法                        |
-| \Crypto | Base64.php     | 区别与base64_encode，此方法为安全的base64加密 |
-| \Crypto | Jwt.php        | Jwt接口验证类                         |
-| \File | Filehandle.php | 文件处理相关方法                         |
-| \File | Image.php      | 图片处理                             |
-| \Network | Getip.php      | 获取客户端IP地址                        |
-| \Validate | Verify.php     | 常用的一些字段验证                        |
-| 持续更新中 | 持续更新中          | 持续更新中……                          |
+|   目录   | 文件名            | 描述                            | 发布版本  |
+| ------- |----------------|----------------------------------|---------------|
+| \Character | Moneyts.php    | 金额数额转换人民币大写值  |1.0.0  |
+| \Character | Pinyin.php     | 汉字转拼音   |1.0.0  |
+| \Character | Timeformat.php | 时间格式语义化 |1.0.0  |
+| \Crypto | Aes.php        | Aes加密解密   |1.0.0  |
+| \Crypto | Asymmetric.php | 非对称相关计算方法 |1.0.0  |
+| \Crypto | Base64.php     | 区别与base64_encode，此方法为安全的base64加密 |1.0.0  |
+| \Crypto | Jwt.php        | Jwt接口验证类  |1.0.2  |
+| \File | Filehandle.php | 文件处理相关方法  |1.0.1  |
+| \File | Image.php      | 图片处理     |1.0.2  |
+| \File | Multiavatar.php      | 随机生成用户头像     |1.0.3  |
+| \Network | Getip.php      | 获取客户端IP地址  |1.0.0  |
+| \Validate | Verify.php     | 常用的一些字段验证    |1.0.0  |
+| 持续更新中 | 持续更新中          | 持续更新中……     | ……  |
 
 
 ### 使用示例
+> 所有方法在example文件夹中有对应的使用方法演示，部分参照如下：
+
 - 金额处理：
 ```php
     <?php
