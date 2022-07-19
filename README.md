@@ -43,6 +43,7 @@
 | \File | Filehandle.php | 文件处理相关方法  |1.0.1  |
 | \File | Image.php      | 图片处理     |1.0.2  |
 | \File | Multiavatar.php      | 随机生成用户头像     |1.0.3  |
+| \File | Bing.php      | 获取每日壁纸     |1.0.4  |
 | \Network | Getip.php      | 获取客户端IP地址  |1.0.0  |
 | \Validate | Verify.php     | 常用的一些字段验证    |1.0.0  |
 | 持续更新中 | 持续更新中          | 持续更新中……     | ……  |
