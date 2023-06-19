@@ -46,6 +46,7 @@
 | \File | Bing.php      | 获取每日壁纸     |1.0.4  |
 | \Network | Getip.php      | 获取客户端IP地址  |1.0.0  |
 | \Validate | Verify.php     | 常用的一些字段验证    |1.0.0  |
+| \Validate | Idcard.php     | 身份证信息提取，年龄，省份，星座等   |1.0.6 |
 | 持续更新中 | 持续更新中          | 持续更新中……     | ……  |
 
 
