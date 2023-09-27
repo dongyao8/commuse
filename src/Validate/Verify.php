@@ -12,9 +12,8 @@ class Verify
      */
     public static function checkHasChinese($str)
     {
-        $len = preg_match('/[\x{4e00}-\x{9fa5}]+/u',$str);
-        if ($len)
-        {
+        $len = preg_match('/[\x{4e00}-\x{9fa5}]+/u', $str);
+        if ($len) {
             return true;
         }
         return false;
@@ -27,9 +26,8 @@ class Verify
      */
     public static function checkAllChinese($str)
     {
-        $len = preg_match('/^[\x{4e00}-\x{9fa5}]+$/u',$str);
-        if ($len)
-        {
+        $len = preg_match('/^[\x{4e00}-\x{9fa5}]+$/u', $str);
+        if ($len) {
             return true;
         }
         return false;
@@ -83,8 +81,7 @@ class Verify
         //匹配日期格式
         if (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $date, $parts) && checkdate($parts[2], $parts[3], $parts[1])) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -119,24 +116,20 @@ class Verify
      */
     public static function checkBank($card)
     {
-        $card = str_replace(' ','',$card);
+        $card = str_replace(' ', '', $card);
         // step1 判断是否16到19位
         $pattern = '/^\d{16,19}$/';
-        if (!preg_match($pattern,$card)) {
+        if (!preg_match($pattern, $card)) {
             return false;
         }
 
         // step2 luhn 算法校验
         $len = strlen($card);
         $sum = 0;
-        for ($i = 0; $i < $len ; $i++)
-        {
-            if (($i + $len) & 1)
-            { // 奇数
+        for ($i = 0; $i < $len; $i++) {
+            if (($i + $len) & 1) { // 奇数
                 $sum += ord($card[$i]) - ord('0');
-            }
-            else
-            { // 偶数
+            } else { // 偶数
                 $tmp = (ord($card[$i]) - ord('0')) * 2;
                 $sum += floor($tmp / 10) + $tmp % 10;
             }
@@ -150,11 +143,12 @@ class Verify
      * @param $pwd
      * @return string
      */
-    public static function checkPwd($pwd){
-        $pattern= '/^[0-9a-z_]{6,16}$/i'; // i 不区分大小写
-        if(preg_match($pattern,$pwd)){
+    public static function checkPwd($pwd)
+    {
+        $pattern = '/^[0-9a-z_]{6,16}$/i'; // i 不区分大小写
+        if (preg_match($pattern, $pwd)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -164,9 +158,10 @@ class Verify
      * @param $num
      * @return bool
      */
-    public static function checkDecimal($num) {
+    public static function checkDecimal($num)
+    {
         // 可以匹配1.11,10.11  或 0.11
-        if (preg_match('/^[1-9]+\d*(.\d{1,2})?$|^\d+.\d{1,2}$/',$num)) {  // ? 0次或1次, + 1次或多次, * 0次或多次
+        if (preg_match('/^[1-9]+\d*(.\d{1,2})?$|^\d+.\d{1,2}$/', $num)) {  // ? 0次或1次, + 1次或多次, * 0次或多次
             return true;
         } else {
             return false;
@@ -178,9 +173,10 @@ class Verify
      * @param $num
      * @return bool
      */
-    public static function checkInteger($num) {
+    public static function checkInteger($num)
+    {
         // 不能小于0
-        if (preg_match('/^[1-9]+\d*$/',$num)) {  // ? 0次或1次, + 1次或多次, * 0次或多次
+        if (preg_match('/^[1-9]+\d*$/', $num)) {  // ? 0次或1次, + 1次或多次, * 0次或多次
             return true;
         } else {
             return false;
@@ -192,7 +188,8 @@ class Verify
      * @param $array
      * @return string
      */
-    public static function checkArray($array){
+    public static function checkArray($array)
+    {
         if (is_array($array)) {
             return true;
         } else {
@@ -207,11 +204,12 @@ class Verify
      * @param $str
      * @return string
      */
-    public static function checkTax($str){
-        $pattern= '/^[0-9A-Z]{15,20}$/'; // i 不区分大小写
-        if(preg_match($pattern,$str)){
+    public static function checkTax($str)
+    {
+        $pattern = '/^[0-9A-Z]{15,20}$/'; // i 不区分大小写
+        if (preg_match($pattern, $str)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -232,7 +230,22 @@ class Verify
      */
     public static function is_wechat()
     {
-        return strpos($_SERVER ['HTTP_USER_AGENT'], 'MicroMessenger') !== false ? true : false;
+        return strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ? true : false;
+    }
+
+    /**
+     * 检测微信id规则
+     * @param string $str
+     * @return boolean
+     */
+    public static function checkWxId($str)
+    {
+        //前2位字符为"wx" 及 长度为16~20位(微信 appid长度为18位, 检测时考虑点伸缩)
+        if (substr($str, 0, 2) == 'wx' && preg_match("/^[a-zA-Z0-9]{16,20}$/", $str)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -247,5 +260,4 @@ class Verify
         }
         return false;
     }
-
 }

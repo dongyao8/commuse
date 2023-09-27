@@ -1,5 +1,5 @@
 # 日常使用类库
- 该项目用于收录整理日常开发所需的常用功能类库，目前处于初级阶段，欢迎各位朋友提供代码，一起维护，让开发变得更简单。
+ 该项目用于收录整理日常开发所需的常用功能类库，欢迎各位朋友提供代码，一起维护，让开发变得更简单。
 ***
 ### 使用方法[推荐]
 稳定版本：
@@ -44,7 +44,7 @@
 | \File | Image.php      | 图片处理     |1.0.2  |
 | \File | Multiavatar.php      | 随机生成用户头像     |1.0.3  |
 | \File | Bing.php      | 获取每日壁纸     |1.0.4  |
-| \Network | Getip.php      | 获取客户端IP地址  |1.0.0  |
+| \Network | Getip.php      | 网络IP相关验证检测  |1.0.0  |
 | \Validate | Verify.php     | 常用的一些字段验证    |1.0.0  |
 | \Validate | Idcard.php     | 身份证信息提取，年龄，省份，星座等   |1.0.6 |
 | 持续更新中 | 持续更新中          | 持续更新中……     | ……  |
@@ -85,3 +85,11 @@
 > 要解密的字符串：85d61MYsItXd81sPW5e3fxY8oONzlOHyOJBOy8P57CY=  
 > 解密后的字符串：这个工具很好用  
 ***
+
+## 由 JetBrains 赞助
+
+[![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=https://github.com/dongyao8/commuse)
+
+### License
+
+Licensed under the [MIT license](LICENSE).
