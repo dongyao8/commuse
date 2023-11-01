@@ -21,8 +21,11 @@ class Getip
                 if ($_SERVER["REMOTE_ADDR"] && strcasecmp($_SERVER["REMOTE_ADDR"], "unknown")) {
                     $ip = $_SERVER["REMOTE_ADDR"];
                 } else {
-                    if (isset ($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'],
-                            "unknown")
+                    if (
+                        isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp(
+                            $_SERVER['REMOTE_ADDR'],
+                            "unknown"
+                        )
                     ) {
                         $ip = $_SERVER['REMOTE_ADDR'];
                     } else {
@@ -127,5 +130,21 @@ class Getip
 
         // @phpstan-ignore-next-line
         return $result ?: null;
+    }
+
+    /**
+     * 隐藏ip v4地址的中间两位
+     * @param  string $ip_v4 ipV4的地址
+     * @return string 处理隐藏后的地址
+     */
+    public static function hide_ipv4($ip_v4)
+    {
+        $ip = explode('.', $ip_v4);
+        if (count($ip) == 4) {
+            $ip[1] = '**';
+            $ip[2] = '**';
+            return implode('.', $ip);
+        }
+        return $ip_v4;
     }
 }

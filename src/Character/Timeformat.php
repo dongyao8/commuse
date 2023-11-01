@@ -82,4 +82,33 @@ class Timeformat
             //return $date_time;
         }
     }
+
+    /**
+     * 根据微秒数获取一个随机id
+     *
+     * @param      $uniqid
+     * @param bool $hasEntropy
+     *
+     * @return string
+     */
+    public static function uniqidToMilliseconds($uniqid, $hasEntropy = false)
+    {
+        if ($hasEntropy) {
+            $uniqid = substr($uniqid, 0, -10);
+        }
+        $microtime = (int)hexdec(substr($uniqid, -5));
+        $microtime = str_pad($microtime, 6, '0', STR_PAD_LEFT);
+        $timestamp = (int)hexdec(substr($uniqid, -13, -5));
+        return (int)(($timestamp . '.' . $microtime) * 1000);
+    }
+
+    /**
+     *获取当前的微秒时间
+     *
+     * @return int
+     */
+    public static function milliseconds()
+    {
+        return (int)floor(microtime(true) * 1000);
+    }
 }
