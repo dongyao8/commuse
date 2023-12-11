@@ -90,6 +90,13 @@
 
 [![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=https://github.com/dongyao8/commuse)
 
+## 免责声明
+
+DYcms程序是免费开源的产品，仅用于学习交流使用！       
+不可用于任何违反`中华人民共和国(含台湾省)`或`使用者所在地区`法律法规的用途。      
+因为作者即本人仅完成代码的开发和开源活动`(开源即任何人都可以下载使用)`，从未参与用户的任何运营和盈利活动。    
+且不知晓用户后续将`程序源代码`用于何种用途，故用户使用过程中所带来的任何法律责任即由用户自己承担。
+
 ### License
 
 Licensed under the [MIT license](LICENSE).
