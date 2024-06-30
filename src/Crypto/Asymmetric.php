@@ -120,4 +120,34 @@ class Asymmetric
         }
         return null;
     }
+
+    /**
+     * @description: 生成密钥资源，部分情况下，需要对密钥进行与处理后参与计算
+     * @param {*} $key  密钥内容
+     * @param {*} $type  公钥｜私钥类型
+     * @return {*}
+     */    
+    public function prepareKey($key, $type) {
+        // 如果密钥已经包含注释和换行，则直接返回
+        if (strpos($key, '-----BEGIN') !== false) {
+            return ($type === 'public') ? openssl_pkey_get_public($key) : openssl_pkey_get_private($key);
+        }
+
+        // 否则，假定是Base64编码的一行密钥
+        $key = base64_decode($key);
+
+        if ($type === 'private') {
+            $pemKey = "-----BEGIN PRIVATE KEY-----\n" . chunk_split(base64_encode($key), 64, "\n") . "-----END PRIVATE KEY-----\n";
+            $preparedKey = openssl_pkey_get_private($pemKey);
+        } else {
+            $pemKey = "-----BEGIN PUBLIC KEY-----\n" . chunk_split(base64_encode($key), 64, "\n") . "-----END PUBLIC KEY-----\n";
+            $preparedKey = openssl_pkey_get_public($pemKey);
+        }
+
+        if (!$preparedKey) {
+            return false;
+        }
+        return $preparedKey;
+    }
+
 }
